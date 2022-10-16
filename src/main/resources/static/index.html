@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA DE HERRAMIENTAS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            type:'GET',
+            dataType:'json',
+            url:'http://localhost:8080/api/Tool/all',
+            success: function(Herramientas){
+                console.log(datos.length);
+                let datosHerramientas ="";
+                for(let i=0;i<datos.length;i++){
+                    datosHerramientas='"<tr>"';
+                    datosHerramientas+="<td>"+datos[i].id+"</td>";
+                    datosHerramientas+="<td>"+datos[i].nombre+"</td>";
+                    datosHerramientas+="<td>"+datos[i].marca+"</td>";
+                    datosHerramientas+="<td>"+datos[i].año+"</td>";
+                    datosHerramientas+="<td>"+datos[i].descripcion+"</td>";
+                    datosHerramientas+="<td>"+datos[i].categoria.nombre+"</td>";
+                    datosHerramientas+="<td><a href = 'editar.html?id="+datos[i].id+"' class = 'btn btn-success'>Editar</a></td>"
+                    datosHerramientas+="<td><a href = 'eliminar.html?id="+datos[i].id+"' class = 'btn btn-success'>Eliminar/td>"
+                    datosHerramientas="</tr>";
+                    $("#datos").append(datosHerramientas);
+                }
+                console.log(datosHerramientas);
+            },
+            error:function (xhr, status){
+                console.log(status);
+                console.log(xhr);
+            }
+        })
+    </script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">MENU</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="Clientes.html">Clientes</a>
+                <a class="nav-link" href="agregarHerramientas.html">Herramientas</a>
+                <a class="nav-link" href="#">Categorias</a>
+                <a class="nav-link" href="#">Reservas</a>
+                <a class="nav-link" href="#">Mensajes</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Help</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h1 class=" mt-5"> HERRAMIENTAS </h1>
+    <a href="agregarHerramientas.html" class="btn. btn-success">Agregar herramientas</a>
+    <table class="table mt-5" id="Herramientas">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>MARCA</th>
+            <th>AÑO</th>
+            <th>DESCRIPCION</th>
+            <th>CATEGORIA</th>
+            <th colspan="2">ACCIONES</th>
+        </tr>
+        </thead>
+        <tbody id="datos">
+
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>
+
+</html>
