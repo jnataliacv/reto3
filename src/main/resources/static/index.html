@@ -18,11 +18,11 @@
                 for(let i=0;i<datos.length;i++){
                     datosHerramientas='"<tr>"';
                     datosHerramientas+="<td>"+datos[i].id+"</td>";
-                    datosHerramientas+="<td>"+datos[i].nombre+"</td>";
-                    datosHerramientas+="<td>"+datos[i].marca+"</td>";
-                    datosHerramientas+="<td>"+datos[i].año+"</td>";
-                    datosHerramientas+="<td>"+datos[i].descripcion+"</td>";
-                    datosHerramientas+="<td>"+datos[i].categoria.nombre+"</td>";
+                    datosHerramientas+="<td>"+datos[i].Cliente+"</td>";
+                    datosHerramientas+="<td>"+datos[i].Herramienta+"</td>";
+                    datosHerramientas+="<td>"+datos[i].Categoria+"</td>";
+                    datosHerramientas+="<td>"+datos[i].Reserva+"</td>";
+                    datosHerramientas+="<td>"+datos[i].Mensaje+"</td>";
                     datosHerramientas+="<td><a href = 'editar.html?id="+datos[i].id+"' class = 'btn btn-success'>Editar</a></td>"
                     datosHerramientas+="<td><a href = 'eliminar.html?id="+datos[i].id+"' class = 'btn btn-success'>Eliminar/td>"
                     datosHerramientas="</tr>";
@@ -48,11 +48,11 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="Clientes.html">Clientes</a>
+                <a class="nav-link" href="cliente.html">Clientes</a>
                 <a class="nav-link" href="agregarHerramientas.html">Herramientas</a>
-                <a class="nav-link" href="#">Categorias</a>
-                <a class="nav-link" href="#">Reservas</a>
-                <a class="nav-link" href="#">Mensajes</a>
+                <a class="nav-link" href="categorias.html">Categorias</a>
+                <a class="nav-link" href="reservacion.html">Reservas</a>
+                <a class="nav-link" href="mensajes.html">Mensajes</a>
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Help</a>
             </div>
         </div>
@@ -61,17 +61,17 @@
 
 
 <div class="container">
-    <h1 class=" mt-5"> HERRAMIENTAS </h1>
+    <h1 class=" mt-5"> TIENDA DE HERRAMIENTAS </h1>
     <a href="agregarHerramientas.html" class="btn. btn-success">Agregar herramientas</a>
     <table class="table mt-5" id="Herramientas">
         <thead>
         <tr>
             <th>ID</th>
-            <th>NOMBRE</th>
-            <th>MARCA</th>
-            <th>AÑO</th>
-            <th>DESCRIPCION</th>
+            <th>CLIENTE</th>
+            <th>HERRAMIENTAS</th>
             <th>CATEGORIA</th>
+            <th>RESERVAS</th>
+            <th>MENSAJES</th>
             <th colspan="2">ACCIONES</th>
         </tr>
         </thead>

@@ -6,37 +6,34 @@
   <title>TIENDA DE HERRAMIENTAS</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
 </head>
 <body>
 
 <div class="container">
-  <h1 class=" mt-5"> HERRAMIENTAS </h1>
+  <h1 class=" mt-5"> RESERVACION </h1>
   <a href="index.html" class="btn. btn-success">Pagina Principal</a>
   <button onclick="leerClientes()">CONSULTAR</button>
   <button onclick="guardarCliente()">GUARDAR</button>
   <button onclick="updateCliente()">ACTUALIZAR</button>
   <button onclick="deleteCliente()">BORRAR</button>
 
-  <table class="table mt-5" id="clientes">
+  <table class="table mt-5" id="reservacion">
     <thead>
     <tr>
     <tr>
-      <th>ID Herramientas </th>
-      <th>Nombre </th>
-      <th>Marca</th>
-      <th>Año</th>
-      <th>Descripcion</th>
-      <th>Categoria</th>
+      <th>ID Reservacion </th>
+      <th>Fecha de reservacion</th>
+      <th>Fecha de devolucion </th>
 
     </tr>
     </thead>
     <tr>
-      <th> <input type="number" id="idHerramienta">   </th>
-      <th> <input type="text" id="nombreHerramienta"> </th>
-      <th> <input type="text" id="marcaHerramienta">  </th>
-      <th> <input type="number" id="añoHerramienta">   </th>
-      <th> <input type="text" id="descripcionHerramienta">   </th>
-      <th> <input type="text" id="categoriaHerramienta">   </th>
+      <th> <input type="number" id="idReservacion">   </th>
+      <th> <input type="number" id="fechaInicio"> </th>
+      <th> <input type="number" id="fechaDevolucion">  </th>
+
 
 
       <tbody id="datos">
