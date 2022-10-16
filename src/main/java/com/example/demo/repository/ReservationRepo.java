@@ -24,7 +24,6 @@ public class ReservationRepo {
     }  // Creates an Optional object to handle reservation id if it is null (easier to handle null values with optional object)
 
     public Reservation save(Reservation r){
-        r.setStatus("created");
         return reservationCrudRepo.save(r);
     } // saves the reservation object
 
