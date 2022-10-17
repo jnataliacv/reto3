@@ -2,7 +2,7 @@
 function getHerramientas(){
     //FUNCION GET
     $.ajax({
-        url:'http://158.101.101.23/api/Tool/all',
+        url:'http://localhost:8080/api/Tool/all',
         type:'GET',
         dataType:'json',
         success: function(Herramientas){
@@ -27,15 +27,15 @@ function guardasHerramientas(){
     let nombreHerramientas = $("#nombre").val();
 
     let data = {
-        id: idHerramientas,
-        marca: marcaHerramientas,
-        modelo: modeloHerramientas,
-        categoria: categoriaHerramientas,
-        nombre: nombreHerramientas
+        'id': idHerramientas,
+        'marca': marcaHerramientas,
+        'modelo': modeloHerramientas,
+        'categoria': categoriaHerramientas,
+        'nombre': nombreHerramientas
     }
 
     const req = new XMLHttpRequest();
-    req.open('POST', 'http://158.101.101.23/api/Tool/save');
+    req.open('POST', 'http://localhost:8080/api/Tool/save');
     req.setRequestHeader('Content-Type', 'application/json')
     req.addEventListener('load', function(){
         if(req.status == 201){
@@ -56,15 +56,15 @@ function updateHerramientas(){
     let nombreHerramientas = $("#nombre").val();
 
     let data = {
-        id: idHerramientas,
-        marca: marcaHerramientas,
-        modelo: modeloHerramientas,
-        categoria: categoriaHerramientas,
-        nombre: nombreHerramientas
+        'id': idHerramientas,
+        'marca': marcaHerramientas,
+        'modelo': modeloHerramientas,
+        'categoria': categoriaHerramientas,
+        'nombre': nombreHerramientas
     }
 
     const req = new XMLHttpRequest();
-    req.open('PUT', 'http://158.101.101.23/api/Tool/update');
+    req.open('PUT', 'http://localhost:8080/api/Tool/update');
     req.setRequestHeader('Content-Type', 'application/json')
     req.addEventListener('load', function(){
         if(req.status == 201){
@@ -80,11 +80,11 @@ function deleteHerramientas(){
     //FUNCIOn DELETE
     let idHerramientas = $("#idHerramientas").val();
     let data = {
-        id:idHerramientas
+        'id':idHerramientas
     }
     let datatosend = JSON.stringify(data);
     $.ajax({
-        url:'http://158.101.101.23/api/Tool/delete',
+        url:'',
         type:'DELETE',
         data: datatosend,
         contentType: 'application/json',
