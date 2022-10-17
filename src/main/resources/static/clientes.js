@@ -2,7 +2,7 @@
 function leerClientes(){
 //funcion get
     $.ajax({
-        url:'http://localhost:8080/api/Client/all',
+        url:'http://158.101.101.23/api/Client/all',
         type:'GET',
         dataType:'json',
 
@@ -34,7 +34,7 @@ function guardarCliente(){
         age:  edadCLiente
     }
     const req = new XMLHttpRequest();  // constante nuevo objeto tipo request
-    req.open('POST', 'http://localhost:8080/api/Client/save');
+    req.open('POST', 'http://158.101.101.23/api/Client/save');
     req.setRequestHeader('Content-Type','application/json')
     req.addEventListener('load', function(){
         if(req.status == 201 && req.readyState == 4){
@@ -62,7 +62,7 @@ function updateCliente(){
     }
     // create a new httpxml request object
     const req = new XMLHttpRequest();
-    req.open('PUT', 'http://localhost:8080/api/Client/update');
+    req.open('PUT', 'http://158.101.101.23/api/Client/update');
     req.setRequestHeader('content-type','application/json');
     req.addEventListener('load', function(){
         if(req.status == 201 && req.readyState == 4){
@@ -84,7 +84,7 @@ function deleteCliente(){
     };
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: 'http://localhost:8080/api/Client/delete',
+        url: 'http://158.101.101.23/api/Client/delete',
         type: 'DELETE',
         data: dataToSend,
         contentType: 'application/JSON',

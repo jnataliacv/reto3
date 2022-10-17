@@ -2,7 +2,7 @@
 function traerCategoria(){
     //funcion GET
     $.ajax({
-        url:'......',
+        url:'http://158.101.101.23/api/Category/all',
         type:'GET',
         dataType:'json',
 
@@ -31,7 +31,7 @@ function guardarCategoria(){
         nombre_categoria: nombrecategoria,
     };
     const req = new XMLHttpRequest();
-    req.open('POST', '......');
+    req.open('POST', 'http://158.101.101.23/api/Category/save');
     req.setRequestHeader('Content-Type','application/json');
     req.addEventListener('load', function(){
         if(req.status == 201){  //si el estatus del rquest es exitoso
@@ -56,7 +56,7 @@ function updateCategoria(){
     };
 
     const req = new XMLHttpRequest();
-    req.open('PUT', '.....');
+    req.open('PUT', 'http://158.101.101.23/api/Category/update');
     req.setRequestHeader('content-type', 'application/json');
     req.addEventListener('load', function(){
         if(req.status == 200 ){
@@ -77,7 +77,7 @@ function deleteCategoria(){
     };
     let datatosend = JSON.stringify(Cate);
     $.ajax({
-        url:'........',
+        url:'http://158.101.101.23/api/Category/delete',
         type:'DELETE',
         data: datatosend,
         contentType:'application/json',

@@ -2,7 +2,7 @@
 function traerRerserva(){
     //funcion GET
     $.ajax({
-        url:'http://localhost:8080/api/Tool/delate',
+        url:'http://158.101.101.23/api/Reservation/all',
         type:'GET',
         dataType:'json',
 
@@ -31,7 +31,7 @@ function guardarReservacion(){
         fecha_devolucion: fechadevolucion,
     };
     const req = new XMLHttpRequest();
-    req.open('POST', '......');
+    req.open('POST', 'http://158.101.101.23/api/Reservation/save');
     req.setRequestHeader('Content-Type','application/json');
     req.addEventListener('load', function(){
         if(req.status == 201){  //si el estatus del rquest es exitoso
@@ -56,7 +56,7 @@ function updateReservacion(){
     };
 
     const req = new XMLHttpRequest();
-    req.open('PUT', '.....');
+    req.open('PUT', 'http://158.101.101.23/api/Reservation/update');
     req.setRequestHeader('content-type', 'application/json');
     req.addEventListener('load', function(){
         if(req.status == 200 ){
@@ -77,7 +77,7 @@ function deleteReservacion(){
     };
     let datatosend = JSON.stringify(info);
     $.ajax({
-        url:'........',
+        url:'http://158.101.101.23/api/Reservation/delete',
         type:'DELETE',
         data: datatosend,
         contentType:'application/json',

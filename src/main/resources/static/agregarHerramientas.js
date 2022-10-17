@@ -2,7 +2,7 @@
 function getHerramientas(){
     //FUNCION GET
     $.ajax({
-        url:'http:///api/Tool/all',
+        url:'http://158.101.101.23/api/Tool/all',
         type:'GET',
         dataType:'json',
         success: function(Herramientas){
@@ -35,7 +35,7 @@ function guardasHerramientas(){
     }
 
     const req = new XMLHttpRequest();
-    req.open('POST', 'http://localhost:8080/api/Tool/save');
+    req.open('POST', 'http://158.101.101.23/api/Tool/save');
     req.setRequestHeader('Content-Type', 'application/json')
     req.addEventListener('load', function(){
         if(req.status == 201){
@@ -64,7 +64,7 @@ function updateHerramientas(){
     }
 
     const req = new XMLHttpRequest();
-    req.open('PUT', 'http://localhost:8080/api/Tool/update');
+    req.open('PUT', 'http://158.101.101.23/api/Tool/update');
     req.setRequestHeader('Content-Type', 'application/json')
     req.addEventListener('load', function(){
         if(req.status == 201){
@@ -84,7 +84,7 @@ function deleteHerramientas(){
     }
     let datatosend = JSON.stringify(data);
     $.ajax({
-        url:'',
+        url:'http://158.101.101.23/api/Tool/delete',
         type:'DELETE',
         data: datatosend,
         contentType: 'application/json',
