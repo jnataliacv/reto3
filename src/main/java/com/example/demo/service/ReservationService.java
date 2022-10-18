@@ -60,7 +60,7 @@ public class ReservationService {
 
     public CompletedAndCancelled getStatusReport(){
         List<Reservation> completed = reservationRepo.getReservationByStatus("completed");
-        List<Reservation> cancelled = reservationRepo.getReservationByStatus("Cancelled");
+        List<Reservation> cancelled = reservationRepo.getReservationByStatus("cancelled");
 
         int cantidadCompletadas = completed.size();
         int cantidadCanceladas = cancelled.size();
